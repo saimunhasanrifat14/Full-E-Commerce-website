@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   --bg_white: #ffffff;
@@ -8,7 +9,7 @@
   --text_black: #000000;
 
   --white_FAFAFA: #fafafa;
-  --white_F5F5F5: #f5f5f5;
+  --white_f5f5f5: #f5f5f5;
   --white_FEFAF1: #fefaf1;
 
   --black_7D8184: #7d8184;
@@ -31,11 +32,11 @@
   --color-TextWhite: var(--text_white);
   --color-TextBlack: var(--text_black);
 
-  --color-White_FAFAFA: var(--white_FAFAFA);
-  --color-White_F5F5F5: var(--white_F5F5F5);
-  --color-White_FEFAF1: var(--white_FEFAF1);
-  --color-Black_7D8184: var(--black_7D8184);
-  --color-Black_363738: var(--black_363738);
+  --color-GraySemiLight: var(--white_FAFAFA);
+  --color-GrayLight: var(--white_f5f5f5);
+  --color-YollowLight: var(--white_FEFAF1);
+  --color-GraySemiDark: var(--black_7D8184);
+  --color-GrayDark: var(--black_363738);
 
   --color-TextRed: var(--Text_red);
   --color-BGRed: var(--bg_red);
@@ -45,4 +46,7 @@
 
   --font-Popins: var(--popins);
   --font-Inter: var(--inter);
+}
+.container {
+  @apply mx-auto px-3 max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px];
 }
