@@ -1,15 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { AiOutlineShopping } from "react-icons/ai";
-import { BsCart } from "react-icons/bs";
-import { FaBars, FaRegHeart, FaRegStar, FaTimes, FaUser } from "react-icons/fa";
-import { FcSearch } from "react-icons/fc";
+import { FaRegHeart, FaRegStar } from "react-icons/fa";
 import { FiSearch, FiUser } from "react-icons/fi";
-import { ImCancelCircle } from "react-icons/im";
-import { IoMdStarOutline } from "react-icons/io";
 import { IoReorderThreeSharp } from "react-icons/io5";
-import { LuShoppingBag, LuUser } from "react-icons/lu";
+import { LuUser } from "react-icons/lu";
 import { MdOutlineCancel, MdOutlineShoppingCart } from "react-icons/md";
-import { RiLogoutCircleLine } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import { TbLogout2 } from "react-icons/tb";
 import { Link, NavLink } from "react-router-dom";
@@ -42,6 +37,23 @@ const Navber = () => {
   ];
   const [toggle, settoggle] = useState(false);
   const [account, setAccount] = useState(false);
+  const userAccountRaf = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (
+      userAccountRaf.current &&
+      !userAccountRaf.current.contains(event.target)
+    ) {
+      setAccount(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const handleAccount = () => {
     setAccount(!account);
@@ -102,12 +114,13 @@ const Navber = () => {
                   <span
                     className="lg:text-GraySemiLight text-TextBlack text-xl lg:text-xl lg:rounded-full lg:bg-BGRed lg:p-2 cursor-pointer relative"
                     onClick={handleAccount}
+                    ref={userAccountRaf}
                   >
                     <FiUser />
                   </span>
                   {account && (
                     <div
-                      className={`absolute right-[0%] top-[150%] z-30 bg-[#00000041] text-TextWhite backdrop-blur-sm w-[300px] flex flex-col py-3 rounded-lg `}
+                      className={`absolute right-[0%] top-[150%] z-30 bg-[#00000058] text-TextWhite backdrop-blur-2xl w-[300px] flex flex-col py-3 rounded-lg `}
                     >
                       <div className="flex items-center gap-x-2 py-3 hover:underline transition-all  text-GrayLight pl-5 hover:cursor-pointer">
                         <span className=" text-3xl ">
