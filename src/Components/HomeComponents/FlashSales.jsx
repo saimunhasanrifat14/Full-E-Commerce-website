@@ -7,6 +7,39 @@ import ProductCard from "../../CommonComponents/ProductCard";
 import Slider from "react-slick";
 
 const FlashSales = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
+  };
+
+  function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
+
+
   return (
     <>
       <div className="mt-[140px] mb-[60px] ">
@@ -35,10 +68,16 @@ const FlashSales = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between gap-8 flex-wrap mt-[40px] mb-[60px]">
+          <Slider {...settings}>
             {[...new Array(4)].map((_, index) => (
-              <ProductCard />
+              <div className="pr-6">
+                <ProductCard />
+              </div>
             ))}
+           
+          </Slider>
+
+          <div className="flex items-center justify-between gap-8 flex-wrap mt-[40px] mb-[60px]">
           </div>
 
           <div className="w-full flex items-center justify-center">
