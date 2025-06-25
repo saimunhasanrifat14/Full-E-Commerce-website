@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
+import AllComponentHeading from "./AllComponentHeading";
+import Timer from "./Timer";
+import { IoMdArrowBack } from "react-icons/io";
+import { IoArrowForward } from "react-icons/io5";
+import Slider from "react-slick";
+import CommonProductSkeleton from "../Skeleton/CommonProductSkeleton";
 
 const CommonProductLayout = ({
-  ProductCard = () => <ProductSkeleton />,
+  ProductCard = () => <CommonProductSkeleton />,
   timeStamp = false,
   timeofOffer = 0,
   isArrowsTrue = false,
   heading = "today's",
   description = "flash sale",
-  partialItemShow = 4,
+  partialItemShow = 2,
   componentData = [],
   isLoading = false,
   viewButton = false,
@@ -18,8 +24,8 @@ const CommonProductLayout = ({
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: partialItemShow - 1,
+    slidesToShow: 4,
+    slidesToScroll: 2,
     rows: rows,
     autoplay: false,
     responsive: [
@@ -57,99 +63,52 @@ const CommonProductLayout = ({
   const prev = () => {
     sliderRef.current.slickNext();
   };
+
   return (
-    <div className="mt-[140px] mb-[60px] ">
-      <div className="container">
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col sm:flex-row   gap-y-3 sm:items-end  sm:gap-x-[87px]">
-            <Heading title={heading} description={description} />
-            {timeStamp && <Timer timeofOffer={timeofOffer} />}
-          </div>
-          <div className="">
-            {isArrowsTrue && (
-              <div className="flex items-center gap-x-4">
-                <h1
-                  onClick={next}
-                  className="cursor-pointer w-[46px] h-[46px] bg-white_F5F5F5 rounded-full flex items-center justify-center hover:bg-black_363738 hover:text-white_FFFFFF transition"
-                >
-                  <span className="text-xl">
-                    <IoMdArrowBack />
-                  </span>
-                </h1>
-                <h1
-                  onClick={prev}
-                  className="cursor-pointer w-[46px] h-[46px] bg-white_F5F5F5 rounded-full flex items-center justify-center hover:bg-black_363738 hover:text-white_FFFFFF transition"
-                >
-                  <span className="text-xl">
-                    <IoArrowForward />
-                  </span>
-                </h1>
-              </div>
-            )}
-          </div>
-
-          {viewButton && (
-            <div className="bg-redDB4444  text-md font-popins font-medium text-white_FFFFFF px-[48px] py-4 rounded cursor-pointer hover:opacity-75">
-              View All
-            </div>
-          )}
+    <>
+      <div className="w-full flex justify-between items-end pb-10">
+        <div className="flex flex-col sm:flex-row   gap-y-3 sm:items-end  sm:gap-x-[87px]">
+          <AllComponentHeading title={heading} description={description} />
+          <div>{timeStamp && <Timer timeofOffer={timeofOffer} />}</div>
         </div>
-        <div className="slider-container">
-          {/* <Slider ref={sliderRef} {...settings}>
-            {isLoading
-              ? [...new Array(6)]?.map((_, index) => (
-                  <div
-                    className={partialItemShow > 4 ? "pr-8" : "pr-6"}
-                    key={index}
-                  >
-                    <ProductSkeleton />
-                  </div>
-                ))
-              : [...new Array(6)]?.map((item, index) => (
-                  <div
-                    className={partialItemShow > 4 ? "pr-8" : "pr-6"}
-                    key={index}
-                  >
-                    <ProductCard itemData={item ? item : {}} />
-                  </div>
-                ))}
-          </Slider> */}
-
-          <div className="slider-container px-[-8px]">
-            <Slider {...settings}>
-              {componentData.length
-                ? componentData.map((item, i) => (
-                    <div key={i} className="px-2">
-                      <ProductCard itemData={item} />
-                    </div>
-                  ))
-                : [1, 2, 3, 4].map((_, i) => (
-                    <div key={i} className="px-2">
-                      <ProductSkeleton />
-                    </div>
-                  ))}
-            </Slider>
+        {isArrowsTrue && (
+          <div className="flex items-center gap-x-4">
+            <h1
+              onClick={next}
+              className="cursor-pointer w-[46px] h-[46px] bg-GrayLight rounded-full flex items-center justify-center hover:bg-GrayDark hover:text-TextWhite transition"
+            >
+              <span className="text-xl">
+                <IoMdArrowBack />
+              </span>
+            </h1>
+            <h1
+              onClick={prev}
+              className="cursor-pointer w-[46px] h-[46px] bg-GrayLight rounded-full flex items-center justify-center hover:bg-GrayDark hover:text-TextWhite transition"
+            >
+              <span className="text-xl">
+                <IoArrowForward />
+              </span>
+            </h1>
           </div>
-          {/* <Slider {...settings}>
-            <div className="px-2">
-              <div className="h-[300px] bg-red-500 w-full">…</div>
-            </div>
-
-            <div className="px-2">
-              <div className="h-[300px] bg-red-500 w-full">…</div>
-            </div>
-
-            <div className="px-2">
-              <div className="h-[300px] bg-red-500 w-full">…</div>
-            </div>
-
-            <div className="px-2">
-              <div className="h-[300px] bg-red-500 w-full">…</div>
-            </div>
-          </Slider> */}
-        </div>
+        )}
       </div>
-    </div>
+
+      <div className="">
+        <Slider ref={sliderRef} {...settings} className="custom-slider">
+          {isLoading
+            ? [...new Array(4)]?.map((_, index) => (
+                <div key={index}>
+                  <CommonProductSkeleton />
+                </div>
+              ))
+            : [...new Array(4)]?.map((item, index) => (
+                <div key={index}>
+                  <ProductCard itemData={item ? item : {}} />
+                </div>
+              ))}
+        </Slider>
+      </div>
+    </>
   );
 };
 

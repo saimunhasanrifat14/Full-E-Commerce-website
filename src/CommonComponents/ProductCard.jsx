@@ -7,7 +7,7 @@ const ProductCard = () => {
   return (
     <>
       <div>
-        <div className="w-[270px] ">
+        <div className="w-full">
           <div className="w-full h-[250px] flex items-center justify-center bg-GrayLight relative group">
             <img className="w-[65%]" src={Product} alt="" />
             <div className="absolute top-0 left-0 w-full h-full p-3 flex items-start justify-between">

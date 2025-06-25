@@ -59,9 +59,11 @@ const Banner = () => {
           transform: "translateX(-50%)",
           borderRadius: "10px",
           padding: "10px",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
-        <ul style={{ margin: "0px" , display: "flex" }}> {dots} </ul>
+        <ul style={{ margin: "0px", display: "flex" }}> {dots} </ul>
       </div>
     ),
     customPaging: (i) =>
