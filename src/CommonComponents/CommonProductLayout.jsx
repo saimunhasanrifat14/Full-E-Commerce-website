@@ -13,19 +13,20 @@ const CommonProductLayout = ({
   isArrowsTrue = false,
   heading = "today's",
   description = "flash sale",
-  partialItemShow = 2,
+  partialItemShow = 4,
   componentData = [],
   isLoading = false,
-  viewButton = false,
   rows = 0 || 1,
 }) => {
   const sliderRef = useRef(null);
+
+  // slider responsive settings
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToShow: partialItemShow,
+    slidesToScroll: 1,
     rows: rows,
     autoplay: false,
     responsive: [
@@ -33,7 +34,7 @@ const CommonProductLayout = ({
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -42,7 +43,7 @@ const CommonProductLayout = ({
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -56,10 +57,11 @@ const CommonProductLayout = ({
     ],
   };
 
+  // slider next button
   const next = () => {
     sliderRef.current.slickPrev();
   };
-
+  // slider prev button
   const prev = () => {
     sliderRef.current.slickNext();
   };
@@ -96,12 +98,12 @@ const CommonProductLayout = ({
       <div className="">
         <Slider ref={sliderRef} {...settings} className="custom-slider">
           {isLoading
-            ? [...new Array(4)]?.map((_, index) => (
+            ? [...new Array(partialItemShow || 4)]?.map((_, index) => (
                 <div key={index}>
                   <CommonProductSkeleton />
                 </div>
               ))
-            : [...new Array(4)]?.map((item, index) => (
+            : [...new Array(partialItemShow || 4)]?.map((item, index) => (
                 <div key={index}>
                   <ProductCard itemData={item ? item : {}} />
                 </div>

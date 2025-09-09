@@ -10,9 +10,9 @@ import CommonProductLayout from "../../CommonComponents/CommonProductLayout";
 const FlashSales = () => {
   return (
     <>
-      <div className="mt-[140px] mb-[60px] ">
+      <div className="mt-[140px] ">
         <div className="container">
-          <div className="w-full ">
+          <div className="w-full border-b-2 border-BGBlack/30 pb-15">
             <CommonProductLayout
               ProductCard={ProductCard}
               timeStamp={true}
@@ -20,7 +20,7 @@ const FlashSales = () => {
               isArrowsTrue={true}
               heading="Today's"
               description="Flash Sales"
-              partialItemShow={3}
+              partialItemShow={4}
               componentData=""
               isLoading={false}
             />
