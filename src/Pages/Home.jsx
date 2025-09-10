@@ -4,6 +4,7 @@ import FlashSales from "../Components/HomeComponents/FlashSales";
 import Category from "../Components/HomeComponents/category";
 import BestSell from "../Components/HomeComponents/BestSell";
 import SalesBanner from "../Components/HomeComponents/SalesBanner";
+import NewArrival from "../Components/HomeComponents/NewArrival";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Category />
       <BestSell />
       <SalesBanner />
+      <NewArrival />
     </>
   );
 };
