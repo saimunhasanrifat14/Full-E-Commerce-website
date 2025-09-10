@@ -3,17 +3,24 @@ import { FaStar } from "react-icons/fa";
 import { IoEyeOutline, IoHeartOutline } from "react-icons/io5";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Product from "../assets/Home/product.png";
-const ProductCard = () => {
+import useCalculateDiscount from "../Hooks/useCalculateDiscount";
+const ProductCard = ({ itemData }) => {
   return (
     <>
       <div>
         <div className="w-full">
           <div className="w-full h-[250px] flex items-center justify-center bg-GrayLight relative group">
-            <img className="w-[65%]" src={Product} alt="" />
+            <img
+              className="w-[65%]"
+              src={itemData ? itemData.thumbnail : Product}
+              alt=""
+            />
             <div className="absolute top-0 left-0 w-full h-full p-3 flex items-start justify-between">
-              <span className="px-3 py-[5px] rounded bg-BGRed inline-block font-popins text-sm text-TextWhite font-normal">
-                -20%
-              </span>
+              {itemData.discountPercentage && (
+                <span className="px-3 py-[5px] rounded bg-BGRed inline-block font-popins text-sm text-TextWhite font-normal">
+                  -{itemData ? itemData.discountPercentage : 0}%
+                </span>
+              )}
               <div className="flex flex-col gap-2">
                 <span className="w-[35px] h-[35px] flex justify-center items-center rounded-full bg-BGWhite cursor-pointer hover:bg-BGRed hover:text-TextWhite text-xl">
                   <IoHeartOutline />
@@ -30,14 +37,18 @@ const ProductCard = () => {
           {/* Product Info */}
           <div className="flex flex-col items-start gap-y-2 mt-4">
             <h2 className="text-lg font-popins font-medium cursor-pointer w-full truncate">
-              Sample Product Title
+              {itemData ? itemData.title : "HAVIT HV-G92 Gamepad"}
             </h2>
             <div className="flex items-center gap-x-3 cursor-pointer">
               <span className="text-TextRed font-medium text-lg font-popins">
-                $80.00
+                $
+                {useCalculateDiscount(
+                  itemData?.price,
+                  itemData?.discountPercentage
+                ).toFixed(2)}
               </span>
               <span className="text-TextBlack opacity-50 font-medium text-lg font-popins line-through">
-                $100.00
+                ${itemData ? itemData.price : 100.0}
               </span>
             </div>
             <div className="flex items-center gap-x-1 cursor-pointer text-yellow-400">
@@ -46,7 +57,7 @@ const ProductCard = () => {
               ))}
               <FaStar className="opacity-30" />
               <h3 className="text-TextBlack opacity-50 font-medium text-lg font-popins ml-1">
-                (20)
+                {`(${itemData?.reviews?.length})`}
               </h3>
             </div>
           </div>

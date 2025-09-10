@@ -6,13 +6,15 @@ import Timer from "../../CommonComponents/Timer";
 import ProductCard from "../../CommonComponents/ProductCard";
 import Slider from "react-slick";
 import CommonProductLayout from "../../CommonComponents/CommonProductLayout";
+import { useGetAllProductQuery } from "../../Features/API/ProductApi";
 
 const FlashSales = () => {
+  const { data, isLoading } = useGetAllProductQuery();
   return (
     <>
       <div className="mt-[140px] ">
         <div className="container">
-          <div className="w-full border-b-2 border-BGBlack/30 pb-15">
+          <div className="w-full border-b border-BGBlack/30 pb-15">
             <CommonProductLayout
               ProductCard={ProductCard}
               timeStamp={true}
@@ -21,8 +23,8 @@ const FlashSales = () => {
               heading="Today's"
               description="Flash Sales"
               partialItemShow={4}
-              componentData=""
-              isLoading={false}
+              componentData={data?.products}
+              isLoading={isLoading}
             />
 
             <div className="w-full flex items-center justify-center mt-14">

@@ -103,9 +103,9 @@ const CommonProductLayout = ({
                   <CommonProductSkeleton />
                 </div>
               ))
-            : [...new Array(partialItemShow || 4)]?.map((item, index) => (
+            : componentData?.map((item, index) => (
                 <div key={index}>
-                  <ProductCard itemData={item ? item : {}} />
+                  <ProductCard itemData={item} />
                 </div>
               ))}
         </Slider>
