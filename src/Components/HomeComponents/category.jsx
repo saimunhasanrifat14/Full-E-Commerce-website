@@ -1,11 +1,9 @@
 import React from "react";
 import CommonProductLayout from "../../CommonComponents/CommonProductLayout";
 import CategoryItem from "../../CommonComponents/CategoryItem";
-import { BsSmartwatch } from "react-icons/bs";
-import { RiComputerLine } from "react-icons/ri";
-import { CiMobile4 } from "react-icons/ci";
-import { GiConsoleController } from "react-icons/gi";
-import { FaCameraRetro, FaHeadphonesSimple } from "react-icons/fa6";
+import { CiCamera, CiHeadphones, CiMobile4 } from "react-icons/ci";
+import { PiGameControllerLight, PiWatchLight } from "react-icons/pi";
+import { LiaLaptopCodeSolid } from "react-icons/lia";
 
 const category = () => {
   const categorybrowse = [
@@ -17,28 +15,28 @@ const category = () => {
     {
       id: 2,
       name: "Computer",
-      icon: <RiComputerLine />,
+      icon: <LiaLaptopCodeSolid />,
     },
     {
       id: 3,
       name: "Smart Watch",
-      icon: <BsSmartwatch />,
+      icon: <PiWatchLight />,
     },
 
     {
       id: 4,
       name: "Camera",
-      icon: <FaCameraRetro />,
+      icon: <CiCamera />,
     },
     {
       id: 5,
       name: "HeadPhone",
-      icon: <FaHeadphonesSimple />,
+      icon: <CiHeadphones />,
     },
     {
       id: 6,
       name: "Gaming",
-      icon: <GiConsoleController />,
+      icon: <PiGameControllerLight />,
     },
     {
       id: 7,
@@ -48,12 +46,12 @@ const category = () => {
     {
       id: 8,
       name: "Computer",
-      icon: <RiComputerLine />,
+      icon: <LiaLaptopCodeSolid />,
     },
     {
       id: 9,
       name: "Smart Watch",
-      icon: <BsSmartwatch />,
+      icon: <PiWatchLight />,
     },
   ];
   return (
