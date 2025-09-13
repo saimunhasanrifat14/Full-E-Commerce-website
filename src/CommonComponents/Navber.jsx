@@ -32,7 +32,7 @@ const Navber = () => {
     {
       id: 4,
       item: "SignUp",
-      pathRoute: "/singup",
+      pathRoute: "/signup",
     },
   ];
   const [toggle, settoggle] = useState(false);
