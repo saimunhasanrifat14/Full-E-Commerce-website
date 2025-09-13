@@ -4,6 +4,7 @@ import { IoEyeOutline, IoHeartOutline } from "react-icons/io5";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Product from "../assets/Home/product.png";
 import useCalculateDiscount from "../Hooks/useCalculateDiscount";
+import Star from "./Star";
 const ProductCard = ({ itemData }) => {
   return (
     <>
@@ -52,10 +53,7 @@ const ProductCard = ({ itemData }) => {
               </span>
             </div>
             <div className="flex items-center gap-x-1 cursor-pointer text-yellow-400">
-              {[...Array(4)].map((_, i) => (
-                <FaStar key={i} />
-              ))}
-              <FaStar className="opacity-30" />
+              <Star rating={itemData?.rating} />
               <h3 className="text-TextBlack opacity-50 font-medium text-lg font-popins ml-1">
                 {`(${itemData?.reviews?.length})`}
               </h3>

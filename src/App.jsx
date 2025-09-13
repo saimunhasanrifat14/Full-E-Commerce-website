@@ -4,6 +4,7 @@ import Rootlayout from "./Components/Rootlayout/Rootlayout";
 import Home from "./Pages/Home";
 import SignUp from "./Pages/SignUp"
 import Login from "./Pages/Login"
+import Contact from "./Pages/Contact"
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
+        <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>
   );
