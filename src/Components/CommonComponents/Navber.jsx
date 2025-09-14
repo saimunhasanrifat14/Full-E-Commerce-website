@@ -22,15 +22,20 @@ const Navber = () => {
       item: "Contact",
       pathRoute: "/contact",
     },
-
     {
       id: 3,
+      item: "About",
+      pathRoute: "/about",
+    },
+
+    {
+      id: 4,
       item: "Product",
       pathRoute: "/product",
     },
 
     {
-      id: 4,
+      id: 5,
       item: "SignUp",
       pathRoute: "/signup",
     },
