@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import AllComponentHeading from "./AllComponentHeading";
-import Timer from "./Timer";
+import AllComponentHeading from "../../Components/CommonComponents/AllComponentHeading";
+import Timer from "../../Components/CommonComponents/Timer";
 import { IoMdArrowBack } from "react-icons/io";
 import { IoArrowForward } from "react-icons/io5";
 import Slider from "react-slick";
-import CommonProductSkeleton from "../Skeleton/CommonProductSkeleton";
+import CommonProductSkeleton from "../../Skeleton/CommonProductSkeleton";
 
 const CommonProductLayout = ({
   ProductCard = () => <CommonProductSkeleton />,

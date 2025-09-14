@@ -1,7 +1,7 @@
 import React from "react";
-import CommonProductLayout from "../../CommonComponents/CommonProductLayout";
-import ProductCard from "../../CommonComponents/ProductCard";
-import { useBestSellingProductQuery } from "../../Features/API/ProductApi";
+import CommonProductLayout from "../../../Components/CommonComponents/CommonProductLayout";
+import ProductCard from "../../../Components/CommonComponents/ProductCard";
+import { useBestSellingProductQuery } from "../../../Features/API/ProductApi";
 
 const BestSell = () => {
   const { data, isLoading } = useBestSellingProductQuery();

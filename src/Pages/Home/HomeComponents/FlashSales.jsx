@@ -1,12 +1,7 @@
 import React from "react";
-import AllComponentHeading from "../../CommonComponents/AllComponentHeading";
-import { IoArrowForward } from "react-icons/io5";
-import { IoMdArrowBack } from "react-icons/io";
-import Timer from "../../CommonComponents/Timer";
-import ProductCard from "../../CommonComponents/ProductCard";
-import Slider from "react-slick";
-import CommonProductLayout from "../../CommonComponents/CommonProductLayout";
-import { useGetAllProductQuery } from "../../Features/API/ProductApi";
+import ProductCard from "../../../Components/CommonComponents/ProductCard";
+import CommonProductLayout from "../../../Components/CommonComponents/CommonProductLayout";
+import { useGetAllProductQuery } from "../../../Features/API/ProductApi";
 
 const FlashSales = () => {
   const { data, isLoading } = useGetAllProductQuery();

@@ -1,8 +1,8 @@
 import React from "react";
 import { IoSendOutline } from "react-icons/io5";
-import qrCode from "../assets/Home/Qrcode.png";
-import playStore from "../assets/Home/GooglePlay.png";
-import appstore from "../assets/Home/AppStore.png";
+import qrCode from "../../assets/Home/Qrcode.png";
+import playStore from "../../assets/Home/GooglePlay.png";
+import appstore from "../../assets/Home/AppStore.png";
 import { RiTwitterLine } from "react-icons/ri";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { BiLogoFacebook } from "react-icons/bi";

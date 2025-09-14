@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../../CommonComponents/Header";
-import Navber from "../../CommonComponents/Navber";
-import Footer from "../../CommonComponents/Footer";
+import Header from "../../Components/CommonComponents/Header";
+import Navber from "../../Components/CommonComponents/Navber";
+import Footer from "../../Components/CommonComponents/Footer";
 import { Outlet } from "react-router-dom";
 
 const Rootlayout = () => {

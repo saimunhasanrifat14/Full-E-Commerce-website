@@ -1,10 +1,10 @@
 import React from "react";
 import { Router, Routes, Route } from "react-router-dom";
 import Rootlayout from "./Components/Rootlayout/Rootlayout";
-import Home from "./Pages/Home";
-import SignUp from "./Pages/SignUp"
-import Login from "./Pages/Login"
-import Contact from "./Pages/Contact"
+import Home from "./Pages/Home/Home";
+import SignUp from "./Pages/SignUp/SignUp"
+import Login from "./Pages/Login/Login"
+import Contact from "./Pages/Contact/Contact"
 
 const App = () => {
   return (

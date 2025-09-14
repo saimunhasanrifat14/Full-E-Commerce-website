@@ -1,9 +1,9 @@
-import ps5Img from "../../assets/Home/ps5Img.png";
-import attractiveWomenImg from "../../assets/Home/attractiveWomenImg.png";
-import ecoPodImg from "../../assets/Home/ecoPodImg.png";
-import perfumeImg from "../../assets/Home/perfumeImg.png";
+import attractiveWomenImg from "../../../assets/Home/attractiveWomenImg.png";
+import ecoPodImg from "../../../assets/Home/ecoPodImg.png";
+import ps5Img from "../../../assets/Home/ps5Img.png";
+import perfumeImg from "../../../assets/Home/perfumeImg.png";
 import { Link } from "react-router";
-import AllComponentHeading from "../../CommonComponents/AllComponentHeading";
+import AllComponentHeading from "../../../Components/CommonComponents/AllComponentHeading";
 
 const NewArrival = () => {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import { IoIosPhonePortrait } from "react-icons/io";
 
 const CategoryItem = ({ itemData }) => {
   return (

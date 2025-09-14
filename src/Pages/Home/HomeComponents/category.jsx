@@ -1,6 +1,6 @@
 import React from "react";
-import CommonProductLayout from "../../CommonComponents/CommonProductLayout";
-import CategoryItem from "../../CommonComponents/CategoryItem";
+import CommonProductLayout from "../../../Components/CommonComponents/CommonProductLayout";
+import CategoryItem from "../../../Components/CommonComponents/CategoryItem";
 import { CiCamera, CiHeadphones, CiMobile4 } from "react-icons/ci";
 import { PiGameControllerLight, PiWatchLight } from "react-icons/pi";
 import { LiaLaptopCodeSolid } from "react-icons/lia";

@@ -1,5 +1,5 @@
-import bannerBg from "../../assets/Home/bannerBg.png";
-import bannerImg from "../../assets/Home/bannerImg.png";
+import bannerBg from "../../../assets/Home/bannerBg.png";
+import bannerImg from "../../../assets/Home/bannerImg.png";
 
 const SalesBanner = () => {
   return (

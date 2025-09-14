@@ -1,9 +1,7 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
 import { IoEyeOutline, IoHeartOutline } from "react-icons/io5";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
-import Product from "../assets/Home/product.png";
-import useCalculateDiscount from "../Hooks/useCalculateDiscount";
+import Product from "../../assets/Home/product.png";
+import useCalculateDiscount from "../../Hooks/useCalculateDiscount";
 import Star from "./Star";
 const ProductCard = ({ itemData }) => {
   return (

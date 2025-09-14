@@ -7,7 +7,7 @@ import { LuUser } from "react-icons/lu";
 import { MdOutlineCancel, MdOutlineShoppingCart } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { TbLogout2 } from "react-icons/tb";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navber = () => {
   const navItem = [
