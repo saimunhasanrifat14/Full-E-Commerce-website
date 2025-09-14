@@ -6,6 +6,7 @@ import BestSell from "./HomeComponents/BestSell";
 import SalesBanner from "./HomeComponents/SalesBanner";
 import NewArrival from "./HomeComponents/NewArrival";
 import Service from "./HomeComponents/Service";
+import ExploreProducts from "./HomeComponents/ExploreProducts";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Category />
       <BestSell />
       <SalesBanner />
+      <ExploreProducts />
       <NewArrival />
       <Service />
     </>

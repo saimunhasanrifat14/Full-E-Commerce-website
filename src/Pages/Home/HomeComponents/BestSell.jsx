@@ -15,6 +15,7 @@ const BestSell = () => {
           isLoading={isLoading}
           partialItemShow={4}
           componentData={data?.products}
+          viewButton={true}
         />
       </div>
     </div>

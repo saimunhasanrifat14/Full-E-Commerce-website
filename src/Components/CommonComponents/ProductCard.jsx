@@ -6,7 +6,7 @@ import Star from "./Star";
 const ProductCard = ({ itemData }) => {
   return (
     <>
-      <div>
+      <div className="mt-10">
         <div className="w-full">
           <div className="w-full h-[250px] flex items-center justify-center bg-GrayLight relative group">
             <img

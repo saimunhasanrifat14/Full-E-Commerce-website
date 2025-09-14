@@ -16,6 +16,7 @@ const CommonProductLayout = ({
   partialItemShow = 4,
   componentData = [],
   isLoading = false,
+  viewButton = false,
   rows = 0 || 1,
 }) => {
   const sliderRef = useRef(null);
@@ -68,8 +69,8 @@ const CommonProductLayout = ({
 
   return (
     <>
-      <div className="w-full flex justify-between items-end pb-10">
-        <div className="flex flex-col sm:flex-row   gap-y-3 sm:items-end  sm:gap-x-[87px]">
+      <div className="w-full flex justify-between items-end">
+        <div className="flex flex-col sm:flex-row gap-y-3 sm:items-end sm:gap-x-[87px]">
           <AllComponentHeading title={heading} description={description} />
           <div>{timeStamp && <Timer timeofOffer={timeofOffer} />}</div>
         </div>
@@ -91,6 +92,12 @@ const CommonProductLayout = ({
                 <IoArrowForward />
               </span>
             </h1>
+          </div>
+        )}
+
+        {viewButton && (
+          <div className="bg-BGRed text-TextWhite text-md font-popins font-medium px-[48px] py-4 rounded cursor-pointer hover:bg-HoverRed">
+            View All
           </div>
         )}
       </div>
