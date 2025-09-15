@@ -2,7 +2,7 @@ import React from "react";
 
 const CommonProductSkeleton = () => {
   return (
-    <div className="w-full animate-pulse">
+    <div className="w-full animate-pulse mt-5">
       {/* Image Skeleton */}
       <div className="w-full h-[250px] bg-gray-200 rounded-md relative">
         <div className="absolute top-3 left-3 w-12 h-5 bg-gray-300 rounded" />
