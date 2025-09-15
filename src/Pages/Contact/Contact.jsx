@@ -1,13 +1,13 @@
 import React from "react";
 import { IoCallOutline, IoMailOutline } from "react-icons/io5";
+import { BreadCrumb } from "../../Components/CommonComponents/BreadCrumb";
 
 const Contact = () => {
   return (
-    <div className="my-20">
+    <div className="">
       <div className="container">
-        {/* <BreadCrumb /> */}
-
-        <div className="flex flex-col md:flex-row gap-10 mt-10">
+        <BreadCrumb />
+        <div className="flex flex-col md:flex-row gap-10 md:my-20 my-10">
           {/* Left: Contact Info */}
           <div className="w-full md:w-[30%] p-8 shadow-sm rounded-lg bg-BGWhite">
             {/* Call To Us */}

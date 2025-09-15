@@ -8,6 +8,7 @@ import { CiShop } from "react-icons/ci";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { TbMoneybag } from "react-icons/tb";
+import { BreadCrumb } from "../../Components/CommonComponents/BreadCrumb";
 
 const About = () => {
   const [currentSlide, setcurrentSlide] = useState(0);
@@ -108,8 +109,7 @@ const About = () => {
   return (
     <div className="mb-[140px]">
       <div className="container">
-        {/* <BreadCrumb /> */}
-
+        <BreadCrumb />
         <div className="flex flex-wrap items-center justify-between mt-15">
           <div className="md:w-[40%] w-full mb-6 md:mb-0">
             <h1 className="text-[54px] font-inter font-semibold text-TextBlack mb-8">
